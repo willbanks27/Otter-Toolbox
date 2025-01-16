@@ -1,4 +1,4 @@
-1. fade
+aaaaaaaaaaaaaaaaaaaaaaa1. fade
 
 Description:
 Applies a fade-in at the beginning and a fade-out at the end of an input signal to smooth out abrupt spikes that can occur at the signal boundaries.
@@ -52,13 +52,3 @@ Outputs:
 Usage:
 
 [monoOut, Lout, Rout] = makeMono(stereoSig);
-
-Installation
-
-To use the functions in this repository, simply download or clone the repository to your local machine and add the folder to your MATLAB path.
-
-git clone https://github.com/yourusername/signal-processing-toolbox.git
-
-Then, in MATLAB, navigate to the folder where the repository is stored and add it to the path:
-
-addpath('path/to/signal-processing-toolbox');
