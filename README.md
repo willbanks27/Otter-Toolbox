@@ -1,4 +1,4 @@
-aaaaaaaaaaaaaaaaaaaaaaa1. fade
+1. fade
 
 Description:
 Applies a fade-in at the beginning and a fade-out at the end of an input signal to smooth out abrupt spikes that can occur at the signal boundaries.
@@ -52,3 +52,39 @@ Outputs:
 Usage:
 
 [monoOut, Lout, Rout] = makeMono(stereoSig);
+
+4. sigProc
+
+Description:
+Removes the DC component from an input signal and scales its values so that the maximum value of the signal is 1. This is useful for preprocessing signals before further analysis or processing.
+
+Inputs:
+
+    in: The input signal (vector).
+
+Outputs:
+
+    processedSignal: The processed signal with no DC component and a maximum value of 1.
+
+Usage:
+
+processedSignal = sigProc(in);
+
+5. centerSig
+
+Description:
+Centers two signals of different lengths and truncates them to create two new signals of equal length. The function adjusts the longer signal by zero-padding, shifting it, and removing the DC component, ensuring that both signals are aligned and of the same length.
+
+Inputs:
+
+    in1: The first input signal (vector).
+    in2: The second input signal (vector).
+
+Outputs:
+
+    in1Final: The first centered and truncated signal.
+    in2Final: The second centered and truncated signal.
+
+Usage:
+
+[in1Final, in2Final] = centerSig(in1, in2);
