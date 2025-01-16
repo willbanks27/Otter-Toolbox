@@ -1,1 +1,64 @@
-fade - designed to apply a fade-in at the beginning and a fade-out at the end of an input signal, sn, in order to smooth out abrupt spikes that can sometimes occur at the start and end of signals. The function takes two inputs: sn, the signal to be modified, and fadeLen, which specifies the length of the fade (both for the fade-in and fade-out). Inside the function, a ramp is created that gradually increases from 0 to 1 at the beginning of the signal and decreases from 1 to 0 at the end. The ramp is then applied to the signal by multiplying the signal values with corresponding fade values at the start and end. The function outputs the modified signal (out) with the fade applied, as well as the ramp used (ramp). This helps to reduce discontinuities at the signal boundaries by ensuring smooth transitions.
+1. fade
+
+Description:
+Applies a fade-in at the beginning and a fade-out at the end of an input signal to smooth out abrupt spikes that can occur at the signal boundaries.
+
+Inputs:
+
+    sn: The input signal (vector).
+    fadeLen: The length of the fade (number of samples).
+
+Outputs:
+
+    out: The signal with the fade-in and fade-out applied.
+    ramp: The ramp function used to apply the fade.
+
+Usage:
+
+[out, ramp] = fade(sn, fadeLen);
+
+2. loadCells
+
+Description:
+Loads a .mat file containing a structure and extracts the first cell array within that structure. This is particularly useful when dealing with MATLAB .mat files that store multiple variables, and you need to extract specific data.
+
+Inputs:
+
+    fileName: The name of the file to load (e.g., 'data.mat').
+
+Outputs:
+
+    cells: The cell array extracted from the first field in the loaded structure.
+
+Usage:
+
+cells = loadCells('data.mat');
+
+3. makeMono
+
+Description:
+Converts a stereo audio signal into a mono signal by averaging the left and right channels. It also returns the left and right channels separately if desired.
+
+Inputs:
+
+    stereoSig: A 2-column matrix, where the first column is the left channel and the second column is the right channel.
+
+Outputs:
+
+    monoOut: The mono version of the input signal.
+    Lout: The left channel of the input signal.
+    Rout: The right channel of the input signal.
+
+Usage:
+
+[monoOut, Lout, Rout] = makeMono(stereoSig);
+
+Installation
+
+To use the functions in this repository, simply download or clone the repository to your local machine and add the folder to your MATLAB path.
+
+git clone https://github.com/yourusername/signal-processing-toolbox.git
+
+Then, in MATLAB, navigate to the folder where the repository is stored and add it to the path:
+
+addpath('path/to/signal-processing-toolbox');
